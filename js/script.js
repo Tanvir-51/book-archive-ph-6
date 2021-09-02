@@ -27,7 +27,7 @@ const displayBookResult = (books) => {
   } else {
     getResult.classList.add("text-danger");
     getResult.innerHTML = `
-            <span class="text-success text-center my-5">${books.numFound}</span> results found
+            <span class="text-success ">${books.numFound}</span> results found
         `;
   }
 
