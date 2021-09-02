@@ -1,5 +1,5 @@
 const searchBook = () => {
-  const searchInput = document.getElementById("search-input");
+  const searchInput = document.getElementById("search-input"); // selecting the search input
   const searchText = searchInput.value;
   console.log(searchText);
 
@@ -13,13 +13,13 @@ const searchBook = () => {
 };
 
 const displayBookResult = (books) => {
-  const { numFound } = books;
+  //   const { numFound } = books;
 
   const getResult = document.getElementById("result"); //where number of result is showed
   getResult.innerHTML = "";
 
   // show how many result found
-  if (numFound === 0) {
+  if (books.numFound === 0) {
     getResult.classList.add("text-danger");
     getResult.innerHTML = `
             No result found
@@ -31,11 +31,11 @@ const displayBookResult = (books) => {
         `;
   }
 
-  const searchResult = document.getElementById("search-result");
+  const searchResult = document.getElementById("search-result"); // selecting the parent element
   searchResult.textContent = "";
   books.forEach((book) => {
     console.log(book);
-    const div = document.createElement("div");
+    const div = document.createElement("div"); // creating the child element
     div.classList.add("col");
     div.innerHTML = `
         <div class="card h-100">
@@ -62,6 +62,6 @@ const displayBookResult = (books) => {
           </div>
         </div>
     `;
-    searchResult.appendChild(div);
+    searchResult.appendChild(div); // adding the child inside the parent
   });
 };
