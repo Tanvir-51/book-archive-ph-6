@@ -9,11 +9,11 @@ const searchBook = () => {
   //   console.log(url);
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayBookResult(data.docs));
+    .then((data) => displayBookResult(data));
 };
 
 const displayBookResult = (books) => {
-  //   const { numFound } = books;
+  const doc = books.docs;
 
   const getResult = document.getElementById("result"); //where number of result is showed
   getResult.innerHTML = "";
@@ -33,7 +33,8 @@ const displayBookResult = (books) => {
 
   const searchResult = document.getElementById("search-result"); // selecting the parent element
   searchResult.textContent = "";
-  books.forEach((book) => {
+
+  doc.forEach((book) => {
     console.log(book);
     const div = document.createElement("div"); // creating the child element
     div.classList.add("col");
