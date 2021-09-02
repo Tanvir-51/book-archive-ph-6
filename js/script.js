@@ -13,7 +13,26 @@ const searchBook = () => {
 };
 
 const displayBookResult = (books) => {
+  const { numFound } = books;
+
+  const getResult = document.getElementById("result"); //where number of result is showed
+  getResult.innerHTML = "";
+
+  // show how many result found
+  if (numFound === 0) {
+    getResult.classList.add("text-danger");
+    getResult.innerHTML = `
+            No result found
+        `;
+  } else {
+    getResult.classList.add("text-danger");
+    getResult.innerHTML = `
+            <span class="text-success text-center my-5">${books.numFound}</span> results found
+        `;
+  }
+
   const searchResult = document.getElementById("search-result");
+  searchResult.textContent = "";
   books.forEach((book) => {
     console.log(book);
     const div = document.createElement("div");
