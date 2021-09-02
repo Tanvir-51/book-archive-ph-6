@@ -11,10 +11,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/style.css" />
 
     <title>Book API</title>
   </head>
-  <body>
+  <body class="container">
     <h1 class="text-center my-5">Book List</h1>
 
     <div class="input-group mb-3 w-50 mx-auto">
@@ -35,6 +36,8 @@
         Search
       </button>
     </div>
+
+    <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4"></div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
